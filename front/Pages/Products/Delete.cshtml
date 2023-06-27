@@ -1,0 +1,26 @@
+@page "{id:int}"
+@model front.Pages.Products.Delete
+
+<div>
+    <h1 class="red">Detalhes do item a ser removido</h1>
+
+    @* <p><strong>Numero:</strong> @Model.Product.ProductId</p> *@
+    @* <p><strong>Estado:</strong> @Model.Product.ProductName</p> *@
+</div>
+
+<form method="post">
+    <div class="form-group">
+
+        <h1 class="red">remoção</h1>
+        <p>
+            Confirmamos a remoção do produto de sua conta. Todas as informações relacionadas a ele
+            foram excluídas. Caso precise de assistência, nossa equipe está à disposição.
+
+        </p>
+        @* <input type="hidden" name="id" value="@Model.id"> *@
+        <button type="submit" value="Deletar" class="btn btn-danger">
+            REMOVER
+        </button>
+        <a asp-page="./Event/Index" class="btn btn-danger">Retornar para a listagem</a>
+    </div>
+</form>

@@ -1,0 +1,14 @@
+@page
+@model front.Pages.Category.Create
+
+<h1 class="red">Criar uma Nova Categoria</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" class="form-group">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="text" name="CategoryName" placeholder="Nome de Categoria" class="form-control" />
+            <button type="submit" class="btn btn-danger">Criar Categoria</button>
+        </form>
+    </div>
+</div>

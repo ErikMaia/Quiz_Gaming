@@ -1,0 +1,28 @@
+@page "{id:int}"
+@model front.Pages.Table.Delete
+
+<h2>
+    Tem certeza de que deseja apagar esta mesa?
+</h2>
+<p>
+    Esta ação é irreversível e resultará na remoção permanente dos dados relacionados a esta mesa. Por favor, tenha em mente que todos os registros e informações associadas a ela serão perdidos.
+</p>
+<p>
+    Se você tem certeza de que deseja prosseguir e apagar a mesa, clique no botão "Confirmar". Caso contrário, clique em "Cancelar" para voltar sem realizar nenhuma alteração.
+</p>
+<p>
+    Por favor, pense cuidadosamente antes de tomar uma decisão, pois não será possível recuperar os dados após a exclusão.
+</p>
+
+Confirme sua escolha:
+
+[Confirmar] [Cancelar]
+
+Lembre-se de substituir "Confirmar" e "Cancelar" pelos textos apropriados para os botões de confirmação e cancelamento na sua aplicação.
+
+<form method="post">
+    <div class="form-group">
+        <button type="submit" class="btn btn-danger">Confirmar</button>
+        <a asp-page="./Index" class="btn btn-danger">Retornar para a listagem</a>
+    </div>
+</form>

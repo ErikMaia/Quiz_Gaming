@@ -1,0 +1,31 @@
+@page "{id:int}"
+@model front.Pages.Waiter.Delete
+
+<div>
+    <h1>Detalhes do item a ser removido</h1>
+
+    <p><strong>Numero:</strong> @Model.Waiter.WaiterId</p>
+    <p><strong>Estado:</strong> @Model.Waiter.FistName</p>
+</div>
+
+<form method="post">
+    <div class="form-group">
+
+        <h1>Remoção</h1>
+        <p>
+            Esperamos que esta mensagem o encontre bem. Estamos entrando em contato para confirmar a remoção do
+            garçom
+            @Model.Waiter.FistName em nosso sistema. Gostaríamos de reiterar que esta ação foi solicitada e será
+            implementada de acordo com as suas instruções.
+        </p>
+        <p>
+            Entendemos que a remoção de um garçom pode ter implicações significativas em nosso sistema, incluindo
+            alterações em processos, fluxos de trabalho e até mesmo na organização dos dados. Portanto, gostaríamos de
+            garantir que você esteja ciente das possíveis consequências decorrentes dessa decisão.
+        </p>
+        <button type="submit" value="Deletar" class="btn btn-danger">
+            REMOVER
+        </button>
+        <a asp-page="./Event/Index" class="btn btn-danger">Retornar para a listagem</a>
+    </div>
+</form>

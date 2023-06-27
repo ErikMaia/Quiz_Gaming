@@ -1,0 +1,23 @@
+@page
+@model front.Pages.Products.Create
+
+<h1>Criar um Novo Produto</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" class="form-group">
+            <input type="text" name="ProductsName" placeholder="Nome de Categoria" class="form-control"/>
+            <input type="text" name="ProductDescription" placeholder="Descrição" id="description">
+            <input type="number" name="ProductPrice" placeholder="Preço" id="price" />
+            <select name="category">
+                @foreach (var category in Model.Categories)
+                {
+                    <option value="@category.CategoryId">@category.CategoryName </option>
+                }
+                <!-- Colocar aqui foreach com as categorias -->
+            </select>
+
+            <button type="submit" class="btn btn-danger">Criar Categoria</button>
+        </form>
+    </div>
+</div>

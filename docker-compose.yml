@@ -1,0 +1,29 @@
+version: '3'
+services:
+  database:
+    container_name: database
+    build: ./Database
+    ports:
+      - 3306:3306
+  api:
+    build: ./api
+    container_name: api
+    depends_on:
+      - database
+    ports:
+      - "5182:80"
+  front:
+    build: ./front
+    container_name: front
+    depends_on:
+      - api
+      - database
+    ports:
+      - "80:80"
+  migration:
+    build: .
+    container_name: migration
+    depends_on:
+      - front
+      - api
+      - database

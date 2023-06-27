@@ -1,0 +1,11 @@
+*.o
+*.obj
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+*.user
+*.vspscc
+bin/
+obj/

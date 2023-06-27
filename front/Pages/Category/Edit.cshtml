@@ -1,0 +1,38 @@
+@page "{id:int}"
+@model front.Pages.Category.Edit
+@{ViewData["Title"] = "Categorias";}
+<h1>Alterar Evento</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" class="form-control">
+            @* <div asp-validation-summary="ModelOnly" class="text-dange"></div>
+            <input type="hidden" asp-for="Category.CategoryId"> *@
+
+            <div class="form-group">
+                <label for="CategoryName"></label>
+                <input onchange="validate()" id="CategoryName" name="CategoryName" class="form-control">
+                <span id="Name-Validator" class="text-dange"></span>
+            </div>
+
+            <br />
+            <div class="form-group">
+                <button id="submit" type="submit" class="btn btn-danger" value="Salvar">SALVAR</button>
+                <a asp-page="/Events/Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    function validate() {
+        let value = document.getElementById('CategoryName').value;
+        let lable = document.getElementById('Name-Validator').innerText;
+        lable.innerText = '';
+        let button = document.getElementById('submit');
+        button.disabled = false;
+        if (value == '') {
+            document.getElementById('Name-Validator').innerText = 'Valor Nulo';
+            button.disabled = true;
+        }
+    }
+</script>

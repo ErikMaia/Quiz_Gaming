@@ -1,0 +1,11 @@
+@page "{id:int}"
+@model front.Pages.Category.Details
+@{ViewData["Title"] = "Categorias";}
+<h1>Detalhes das </h1>
+
+<div>
+    <p>Numero: @Model.Category.CategoryId </p>
+    <p> @Model.Category.CategoryName </p>
+</div>
+
+<a asp-page="Index">Voltar para a lista</a>
