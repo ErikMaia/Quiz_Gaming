@@ -1,4 +1,4 @@
-namespace api.core.DTOs;
+namespace api.DTOs;
     public class MaterialDTO
     {
 
