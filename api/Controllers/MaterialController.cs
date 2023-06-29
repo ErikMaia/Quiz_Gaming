@@ -1,3 +1,4 @@
+using api.core.Models;
 using api.DTOs;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,24 +16,33 @@ public class MaterialController : ControllerBase
     [HttpGet]
     public IActionResult Index()
     {
-
-        return Ok();
+        var material =_dbContext.Material!.ToList();
+        return Ok(material);
     }
     [HttpPost]
-    public IActionResult Create(StudentDTO student)
+    public IActionResult Create(MaterialModel model)
     {
-
+        _dbContext.Material!.Add(model);
+        _dbContext.SaveChanges();
         return StatusCode(201);
     }
 
     [HttpGet("{id}")]
     public IActionResult FindOne(int id)
     {
-        return Ok();
+        var one = _dbContext.Material!.Find(id);
+        if (one != null)
+            return Ok(one);
+        return NotFound();
     }
     [HttpDelete("{id}")]
     public IActionResult Remove(int id)
     {
+        var remove = _dbContext.Material!.Find(id);
+        if(remove == null) 
+            return NotFound();
+        _dbContext.Material!.Remove(remove);
+        _dbContext.SaveChanges();
         return Ok();
     }
 }

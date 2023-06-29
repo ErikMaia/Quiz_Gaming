@@ -4,10 +4,10 @@ using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 // using api.Models;
 public class DatabaseContext : DbContext
 {
-    public ClassRoomModel? ClassRoom { get; set; }
-    public MaterialModel? Material { get; set; }
-    public QuizzModel? Quiz { get; set; }
-    public StudentModel? Student { get; set; }
+    public DbSet<ClassRoomModel>? ClassRoom { get; set; }
+    public DbSet<MaterialModel>? Material { get; set; }
+    public DbSet<QuizzModel>? Quiz { get; set; }
+    public DbSet<StudentModel>? Student { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         var serverVersion = new MySqlServerVersion(new Version(8, 0, 31)); // Especifique a versão correta do servidor MySQL aqui

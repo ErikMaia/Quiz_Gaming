@@ -1,3 +1,4 @@
+using api.core.Models;
 using api.DTOs;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,24 +16,43 @@ public class ClassRoomController : ControllerBase
     [HttpGet]
     public IActionResult Index()
     {
-
-        return Ok();
+        var classroom = _dbContext.ClassRoom!.ToList();
+        return Ok(classroom);
     }
     [HttpPost]
-    public IActionResult Create(StudentDTO student)
+    public IActionResult Create(ClassRoomDTO dto)
     {
-
-        return StatusCode(201);
+        try{
+            var student = new ClassRoomModel(){
+                Description = dto.Description,
+                Student = new List<StudentModel>(),
+            };
+            _dbContext.ClassRoom!.Add(student);
+            _dbContext.SaveChanges();
+            return StatusCode(201);
+        }
+        catch(Exception e){
+            Console.WriteLine(e);
+            return BadRequest();
+        }
     }
 
     [HttpGet("{id}")]
     public IActionResult FindOne(int id)
     {
-        return Ok();
+        var one =_dbContext.ClassRoom!.Find(id);
+        if(one != null)
+            return Ok(one);
+        return NotFound();
     }
     [HttpDelete("{id}")]
     public IActionResult Remove(int id)
     {
+        var remove = _dbContext.ClassRoom!.Find(id);
+        if(remove == null)
+        return BadRequest();
+        _dbContext.ClassRoom!.Remove(remove);
+        _dbContext.SaveChanges();
         return Ok();
     }
 }
