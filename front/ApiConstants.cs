@@ -5,7 +5,7 @@ namespace front.Constant
 {
     public class ApiConstants
     {
-        public const string BASE_URL = "http://api:5182/";
+        public const string BASE_URL = "http://api/";
         public const string TABLE_URL = BASE_URL + "table/";
         public const string CATEGORY_URL = BASE_URL + "category/";
         public const string PRODUCT_URL = BASE_URL + "product/";
