@@ -42,3 +42,7 @@ footer{
   height: 100;
   background-color: black;
 }
+
+main{
+  margin: 30px;
+}

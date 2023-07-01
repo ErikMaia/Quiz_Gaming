@@ -1,15 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+using api.core.DTOs;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
 
 namespace front.Pages.Quizz
 {
     public class Index : PageModel
     {
+        public QuizzDTO Quiz { get; set; } = new();
         private readonly ILogger<Index> _logger;
 
         public Index(ILogger<Index> logger)
@@ -20,5 +16,9 @@ namespace front.Pages.Quizz
         public void OnGet()
         {
         }
+
+        public void OnPost() {
+
+         }
     }
 }
