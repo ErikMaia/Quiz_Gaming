@@ -19,8 +19,4 @@ public class StudentModel
     [Required]
     public string? Password { get; set; }
 
-    [ForeignKey("ClassRoomModel")]
-    public int ClassId { get; set; }
-
-    public ClassRoomModel? ClassRoom { get; set; }
 }

@@ -3,7 +3,7 @@ namespace api.DTOs;
     {
 
         public int MaterialId { get; set; }
-        public int Type { get; set; }
+        public int MaterialType { get; set; }
         public string? Link { get; set; }
         public string? Title { get; set; }
         public string? Image { get; set; }

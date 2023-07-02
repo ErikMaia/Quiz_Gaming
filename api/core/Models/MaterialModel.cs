@@ -5,7 +5,7 @@ public class MaterialModel
     [Key]
     public int MaterialId { get; set; }
     [Required]
-    public int Type { get; set; }
+    public int MaterialType { get; set; }
     [Required]
     public string? Link { get; set; }
     [Required]
