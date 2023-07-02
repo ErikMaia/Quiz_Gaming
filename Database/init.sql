@@ -9,6 +9,6 @@ INSERT INTO Quiz(Correct,Questions,FirstOption,SecondOption,ThirdOption) VALUES 
 INSERT INTO Quiz(Correct,Questions,FirstOption,SecondOption,ThirdOption) VALUES (3,'Qual das seguintes palavras é um pronome pessoal no caso objetivo?','she','we','me');
 INSERT INTO Quiz(Correct,Questions,FirstOption,SecondOption,ThirdOption) VALUES (2,'Qual é a forma correta do comparativo de superioridade do adjetivo "good" (bom)?','goodest','better','best');
 INSERT INTO Quiz(Correct,Questions,FirstOption,SecondOption,ThirdOption) VALUES (2,'Qual é o sinônimo correto para a palavra "happy" (feliz)?','tired','pleased','confused');
-INSERT INTO Quiz(Correct,Questions,FirstOption,SecondOption,ThirdOption) VALUES (2,'Qual das seguintes opções contém apenas preposições?" (feliz)?','on, at, in','dog, cat, bird','run, jump, play');
+INSERT INTO Quiz(Correct,Questions,FirstOption,SecondOption,ThirdOption) VALUES (1,'Qual das seguintes opções contém apenas preposições?" (feliz)?','on, at, in','dog, cat, bird','run, jump, play');
 
 SELECT * FROM Quiz;
