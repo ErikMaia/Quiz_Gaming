@@ -1,7 +1,6 @@
 using api.core.Models;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-// using api.Models;
 public class DatabaseContext : DbContext
 {
     public DbSet<MaterialModel>? Material { get; set; }

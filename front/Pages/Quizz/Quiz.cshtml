@@ -1,0 +1,29 @@
+@page "{id:int}"
+@model front.Pages.Quizz.Index
+@{
+    ViewData["Title"] = "Quizz";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div style="margin: auto;">
+    <div class="row" style="margin-top:auto">
+            <div class="col">
+                <h2>Questão 1:</h2>
+                <p>Qual é a capital do Brasil?</p>
+                <button class="btn btn-primary btn-block" onclick="checkAnswer(1, 'a')">São Paulo</button>
+                <button class="btn btn-primary btn-block" onclick="checkAnswer(1, 'b')">Rio de Janeiro</button>
+                <button class="btn btn-primary btn-block" onclick="checkAnswer(1, 'c')">Brasília</button>
+                <button class="btn btn-primary btn-block" onclick="checkAnswer(1, 'd')">Salvador</button>
+            </div>
+        </div>
+</div>
+
+<script>
+    function checkAnswer(selectedOption) {
+        // Lógica para verificar a resposta selecionada pelo usuário
+        // Você pode implementar a lógica de verificação aqui
+        console.log("Question: " + question);
+        console.log("Selected Option: " + selectedOption);
+    }
+</script>

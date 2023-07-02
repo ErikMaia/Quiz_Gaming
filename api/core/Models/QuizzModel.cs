@@ -5,6 +5,8 @@ public class QuizzModel
 {
     [Key]
     public int QuizzId { get; set; }
+    [Required]
+    public string? QuizzTitle { get; set; }
 
     [Required]
     public int Correct { get; set; }
