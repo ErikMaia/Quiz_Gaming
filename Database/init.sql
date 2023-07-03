@@ -2,14 +2,14 @@ desc Material;
 INSERT INTO Material(MaterialType, Link, Title, Image)
 VALUES (
         1,
-        '~/assets/1000-frases-mais-usadas-no-ingles.pdf',
+        'assets/1000-frases-mais-usadas-no-ingles.pdf',
         '1000 Frases Mais Usadas No Ingles',
-        'https://www.baixelivros.com.br/media/2022/02/ingles-aplicado-eventos.jpg'
+        'https://www.baixelivros.com.br/media/2022/02/frases-ingles.jpg'
     );
 INSERT INTO Material(MaterialType, Link, Title, Image)
 VALUES (
         1,
-        '~/assets/ingles-aplicado-a-eventos.pdf',
+        'assets/ingles-aplicado-a-eventos.pdf',
         'Ingles Aplicado A Eventos',
         'https://www.baixelivros.com.br/media/2022/02/ingles-aplicado-eventos.jpg'
     );

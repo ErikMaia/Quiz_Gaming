@@ -11,18 +11,25 @@
         <div class="col">
             <h2>Questão</h2>
             <p>@Model.quiz.Questions</p>
-            <button class="btn btn-primary btn-block" onclick="checkAnswer(1, 'a')">@Model.quiz.FirstOption</button>
-            <button class="btn btn-primary btn-block" onclick="checkAnswer(1, 'b')">@Model.quiz.SecondOption</button>
-            <button class="btn btn-primary btn-block" onclick="checkAnswer(1, 'c')">@Model.quiz.ThirdOption</button>
+            <button class="btn btn-primary btn-block option" onclick="checkAnswer(1)">@Model.quiz.FirstOption</button>
+            <button class="btn btn-primary btn-block option" onclick="checkAnswer(2)">@Model.quiz.SecondOption</button>
+            <button class="btn btn-primary btn-block option" onclick="checkAnswer(3)">@Model.quiz.ThirdOption</button>
         </div>
     </div>
 </div>
 
 <script>
     function checkAnswer(selectedOption) {
-        // Lógica para verificar a resposta selecionada pelo usuário
-        // Você pode implementar a lógica de verificação aqui
-        console.log("Question: " + question);
-        console.log("Selected Option: " + selectedOption);
+        var buttonPressed = document.getElementsByClassName("option")[selectedOption-1];
+        buttonPressed.classList.remove("btn-primary");
+        if(selectedOption == @Model.quiz.Correct){
+            buttonPressed.classList.add("btn-success");
+        }
+        else{
+            buttonPressed.classList.add("btn-danger");
+        }
+        setTimeout(function(){
+            location.href = "/Quizz";
+        },3000);
     }
 </script>
