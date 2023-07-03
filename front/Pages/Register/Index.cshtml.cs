@@ -1,10 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
+using api.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace front.Pages.Register
 {
@@ -19,6 +17,19 @@ namespace front.Pages.Register
 
         public void OnGet()
         {
+        }
+        public async Task<IActionResult> OnPostAsync()
+        {
+            var http = new HttpClient();
+            var student = new StudentDTO()
+            {
+                Email = Request.Form["email"],
+                FirstName = Request.Form["firstName"],
+                LastName = Request.Form["lastName"],
+                Password = Request.Form["password"],
+            };
+            var response = await http.PostAsJsonAsync(Api.STUDENT + "/login", student);
+            return RedirectToPage("/Login/Index");
         }
     }
 }
