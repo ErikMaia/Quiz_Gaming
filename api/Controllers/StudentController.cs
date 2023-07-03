@@ -45,4 +45,12 @@ public class StudentController : ControllerBase
     {
         return Ok();
     }
+    [HttpPost("login")]
+    public ActionResult Login(StudentDTO dto)
+    {
+        string username = dto.Email!; 
+        string password = dto.Password!;
+        var user = _dbContext.Student!.First((u) => u.Email == username && u.Password == password);
+        return Ok(user);
+    } 
 }
