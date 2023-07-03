@@ -1,5 +1,6 @@
-using api.core.DTOs;
+using api.DTOs;
 using front.Constant;
+using front.DTOs;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace front.Pages.Quizz;
@@ -13,10 +14,11 @@ public class Index : PageModel
         _logger = logger;
     }
 
-    public async void OnGet()
+    public async Task OnGet()
     {
         var http = new HttpClient();
         var request = await http.GetAsync(Api.QUIZ_URL);
         quiz = await Json.SerializeAsync<List<QuizzDTO>>(request);
+        Console.WriteLine(quiz.ToString());
     }
 }

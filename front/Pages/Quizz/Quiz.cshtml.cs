@@ -1,4 +1,4 @@
-using api.core.DTOs;
+using front.DTOs;
 using front.Constant;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -14,7 +14,7 @@ namespace front.Pages.Quizz
             _logger = logger;
         }
 
-        public async void OnGet(int id)
+        public async Task OnGet(int id)
         {
             var http = new HttpClient();
             var request = await http.GetAsync($"{Api.QUIZ_URL}/{id}");

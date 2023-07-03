@@ -6,13 +6,17 @@
 
 <h1>@ViewData["Title"]</h1>
 <div>
-    <a asp-page="Quiz" asp-route-id="1">
-        <div class="card" style="width:18rem">
-            <div class="card-body">
-                <h5 class="card-title ">
-                    ToBe
-                </h5>
+    @foreach (var quizz in Model.quiz)
+    {
+
+        <a asp-page="Quiz" asp-route-id="@quizz.QuizzId">
+            <div class="card" style="width:18rem">
+                <div class="card-body">
+                    <h5 class="card-title ">
+                        @quizz.QuizzTitle
+                    </h5>
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
+    }
 </div>
