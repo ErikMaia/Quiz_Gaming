@@ -23,12 +23,19 @@ namespace front.Pages.Register
             var http = new HttpClient();
             var student = new StudentDTO()
             {
+                StudentId = 0,
                 Email = Request.Form["email"],
                 FirstName = Request.Form["firstName"],
                 LastName = Request.Form["lastName"],
                 Password = Request.Form["password"],
             };
-            var response = await http.PostAsJsonAsync(Api.STUDENT + "/login", student);
+            Console.WriteLine(student.Email + "email");
+            Console.WriteLine(student.FirstName + "first");
+            Console.WriteLine(student.LastName + "LastName");
+            Console.WriteLine(student.Password + "pass");
+
+            var response = await http.PostAsJsonAsync(Api.STUDENT, student);
+            Console.WriteLine(response.ToString());
             return RedirectToPage("/Login/Index");
         }
     }

@@ -33,7 +33,7 @@ namespace front.Pages.Login
             var response = await http.PostAsJsonAsync(Api.STUDENT+"/login", student);
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToPage("/");
+                return RedirectToPage("/Index");
             }
 
             return Page();

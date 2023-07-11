@@ -20,10 +20,16 @@ public class StudentController : ControllerBase
         return Ok();
     }
     [HttpPost]
-    public IActionResult Create(StudentModel student)
+    public IActionResult Create(StudentDTO dto)
     {
         try
         {
+            var student = new StudentModel() { 
+                Email = dto.Email, 
+                FirstName = dto.FirstName, 
+                LastName = dto.LastName, 
+                Password = dto.Password
+            };
             _dbContext.Student!.Add(student);
             _dbContext.SaveChanges();
             return StatusCode(201);
@@ -48,9 +54,9 @@ public class StudentController : ControllerBase
     [HttpPost("login")]
     public ActionResult Login(StudentDTO dto)
     {
-        string username = dto.Email!; 
+        string username = dto.Email!;
         string password = dto.Password!;
         var user = _dbContext.Student!.First((u) => u.Email == username && u.Password == password);
         return Ok(user);
-    } 
+    }
 }
