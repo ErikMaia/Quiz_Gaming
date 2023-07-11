@@ -29,10 +29,6 @@ namespace front.Pages.Register
                 LastName = Request.Form["lastName"],
                 Password = Request.Form["password"],
             };
-            Console.WriteLine(student.Email + "email");
-            Console.WriteLine(student.FirstName + "first");
-            Console.WriteLine(student.LastName + "LastName");
-            Console.WriteLine(student.Password + "pass");
 
             var response = await http.PostAsJsonAsync(Api.STUDENT, student);
             Console.WriteLine(response.ToString());
