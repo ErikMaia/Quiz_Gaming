@@ -1,5 +1,6 @@
 using api.core.Models;
 using api.DTOs;
+using Api.Utils;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers;
@@ -13,12 +14,7 @@ public class StudentController : ControllerBase
     {
         _dbContext = dbContext;
     }
-    [HttpGet]
-    public IActionResult Index()
-    {
 
-        return Ok();
-    }
     [HttpPost]
     public IActionResult Create(StudentDTO dto)
     {
@@ -28,7 +24,7 @@ public class StudentController : ControllerBase
                 Email = dto.Email, 
                 FirstName = dto.FirstName, 
                 LastName = dto.LastName, 
-                Password = dto.Password
+                Password = Crypto.criptograph(dto.Password!)
             };
             _dbContext.Student!.Add(student);
             _dbContext.SaveChanges();
@@ -40,23 +36,15 @@ public class StudentController : ControllerBase
             return BadRequest();
         }
     }
-
-    [HttpGet("{id}")]
-    public IActionResult FindOne(int id)
-    {
-        return Ok();
-    }
-    [HttpDelete("{id}")]
-    public IActionResult Remove(int id)
-    {
-        return Ok();
-    }
     [HttpPost("login")]
     public ActionResult Login(StudentDTO dto)
     {
         string username = dto.Email!;
         string password = dto.Password!;
-        var user = _dbContext.Student!.First((u) => u.Email == username && u.Password == password);
+        var user = _dbContext.Student!.First((u) => u.Email == username);
+        if(user == null || !Crypto.IsValid(password, user.Password!)){
+            return NotFound();
+        }
         return Ok(user);
     }
 }
