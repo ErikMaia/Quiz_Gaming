@@ -15,12 +15,16 @@ Certifique-se de ter o seguinte software instalado em seu sistema:
 Clone este repositório para o seu ambiente local utilizando o seguinte comando:
 
 ```bash
-git clone https://github.com/ErikMaia/gamificacao-02.git tds
+git clone https://github.com/ErikMaia/tds_projeto_final.git tds
 ```
 
 ### Passo 2: Configurar o Docker Compose
 
 Navegue até o diretório raiz do projeto clonado e abra o arquivo `docker-compose.yml` em um editor de texto. Verifique as configurações e ajuste conforme necessário, como as portas e variáveis de ambiente.
+
+```bash
+cd tds
+```
 
 ### Passo 3: Executar o Docker Compose
 
