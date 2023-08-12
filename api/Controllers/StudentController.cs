@@ -41,8 +41,8 @@ public class StudentController : ControllerBase
     {
         string username = dto.Email!;
         string password = dto.Password!;
-        var user = _dbContext.Student!.First((u) => u.Email == username);
-        if(user == null || !Crypto.IsValid(password, user.Password!)){
+        var user = _dbContext.Student!.First((u) => u.Email == username && u.Password == Crypto.criptograph(password));
+        if(user == null){
             return NotFound();
         }
         return Ok(user);
