@@ -15,9 +15,8 @@ public class Crypto
     }
     private static string ByteArrayToString(byte[] arrInput)
     {
-        int i;
         StringBuilder sOutput = new StringBuilder(arrInput.Length);
-        for (i = 0; i < arrInput.Length; i++)
+        for (int i = 0; i < arrInput.Length; i++)
         {
             sOutput.Append(arrInput[i].ToString("X2"));
         }

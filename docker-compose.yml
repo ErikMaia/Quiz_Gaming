@@ -13,7 +13,7 @@ services:
     ports:
       - "5182:80"
   front:
-    build: ./front
+    build: ./web
     container_name: front
     depends_on:
       - api
