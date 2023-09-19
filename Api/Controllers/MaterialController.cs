@@ -16,7 +16,7 @@ public class MaterialController : ControllerBase
     [HttpGet]
     public IActionResult Index()
     {
-        var material =_dbContext.Material!.ToList();
+        var material = _dbContext.Material!.ToList();
         return Ok(material);
     }
     [HttpPost]
@@ -32,14 +32,16 @@ public class MaterialController : ControllerBase
     {
         var one = _dbContext.Material!.Find(id);
         if (one != null)
+        {
             return Ok(one);
+        }
         return NotFound();
     }
     [HttpDelete("{id}")]
     public IActionResult Remove(int id)
     {
         var remove = _dbContext.Material!.Find(id);
-        if(remove == null) 
+        if (remove == null)
             return NotFound();
         _dbContext.Material!.Remove(remove);
         _dbContext.SaveChanges();

@@ -32,14 +32,17 @@ public class QuizzController : ControllerBase
     {
         var quiz = _dbContext.Quiz!.Find(id);
         if (quiz != null)
+        {
             return Ok(quiz);
+        }
         return NotFound();
     }
     [HttpDelete("{id}")]
     public IActionResult Remove(int id)
     {
         var remove = _dbContext.Quiz!.Find(id);
-        if (remove == null){
+        if (remove == null)
+        {
             return NotFound();
         }
         _dbContext.Quiz!.Remove(remove);
