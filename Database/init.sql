@@ -1,4 +1,3 @@
-desc Material;
 INSERT INTO Material(MaterialType, Link, Title, Image)
 VALUES (
         1,
@@ -15,8 +14,6 @@ VALUES (
     );
 SELECT *
 FROM Material;
-SHOW tables;
-desc Quiz;
 INSERT INTO Quiz(
         QuizzTitle,
         Correct,
