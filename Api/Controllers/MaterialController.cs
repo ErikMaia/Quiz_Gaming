@@ -42,7 +42,9 @@ public class MaterialController : ControllerBase
     {
         var remove = _dbContext.Material!.Find(id);
         if (remove == null)
+        {
             return NotFound();
+        }
         _dbContext.Material!.Remove(remove);
         _dbContext.SaveChanges();
         return Ok();
