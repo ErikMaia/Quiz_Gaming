@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /app
 
 # Copia os arquivos do projeto e restaura as dependências
-COPY ./api/ ./
+COPY ./Api/ ./
 RUN dotnet restore
 
 RUN dotnet tool install --global dotnet-ef --version 7.0.5

@@ -94,5 +94,3 @@ VALUES (
         'dog, cat, bird',
         'run, jump, play'
     );
-SELECT *
-FROM Quiz;
