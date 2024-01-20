@@ -33,6 +33,7 @@ namespace front.Pages.Login
             var response = await http.PostAsJsonAsync(Api.STUDENT+"/login", student);
             if (response.IsSuccessStatusCode)
             {
+                Response.Cookies.Append("email",student.Email!);
                 return RedirectToPage("/Index");
             }
 

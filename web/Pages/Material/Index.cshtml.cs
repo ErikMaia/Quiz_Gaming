@@ -21,12 +21,17 @@ namespace front.Pages.Material
         }
 
 
-        public async Task OnGet()
+        public async Task<IActionResult> OnGet()
         {
+            if (Request.Cookies["email"] == null)
+            {
+                return RedirectToPage("/Login/Index");
+            }
             var http = new HttpClient();
             var request = await http.GetAsync(Api.MATERIAL_URL);
             materials = await Json.SerializeAsync<List<MaterialDTO>>(request);
             Console.WriteLine(materials.ToString());
+            return Page();
         }
 
     }
