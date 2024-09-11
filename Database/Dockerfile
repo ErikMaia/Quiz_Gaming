@@ -1,4 +1,4 @@
-FROM mysql:8.0.31
+FROM mysql:8.0.39
 
 ENV MYSQL_ROOT_PASSWORD=tarefas
 ENV MYSQL_DATABASE=tarefas
